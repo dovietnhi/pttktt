@@ -1,0 +1,29 @@
+Mô tả chi tiết thuật toán:
+Ta sử dụng kỹ thuật quay lui để thử mọi khả năng phân tích số n thành tổng các số nguyên dương.
+Bắt đầu từ số 1, thử tất cả các số có thể được thêm vào tổng để đạt được n. Với mỗi số, ta đệ quy gọi thuật toán để xem có bao nhiêu cách phân tích số còn lại.
+Khi thử hết tất cả các số và tổng vẫn chưa đạt được n, quay lui để thử các khả năng khác.
+
+Phương pháp thiết kế thuật toán:
+Sử dụng kỹ thuật quay lui để thử mọi khả năng.
+Đảm bảo rằng ta không tính trùng các cách phân tích là hoán vị của nhau.
+
+Gọi
+T(n) là thời gian chạy của thuật toán với đầu vào là 
+n. Biểu thức đệ quy có thể được xác định như sau:
+T(n)=T(n−1)+T(n−2)+…+T(1)
+
+Ở đây, chúng ta thực hiện đệ quy cho mọi giá trị từ 
+n đến 1, mỗi lần gọi đệ quy sẽ giảm giá trị của n.
+Điều này tương đương với việc thử mọi khả năng từ 1 đến n.
+
+Để đơn giản, giả sử rằng 
+T(0)=1, tức là trường hợp cơ sở khi 
+n=0 và không cần thêm bước đệ quy nữa.
+
+Dựa trên biểu thức trên, chúng ta có thể xác định độ phức tạp thời gian của thuật toán là 
+O(2^n). Điều này là do mỗi lần gọi đệ quy tạo ra n 
+nhánh và mỗi nhánh tiếp tục thực hiện đệ quy với giá trị giảm đi 1.
+Độ phức tạp 
+O(2^n) là khá lớn, đặc biệt khi 
+n tăng. Thuật toán này có hiệu suất không tốt, đặc biệt là khi 
+n lớn, vì số lượng nhánh tăng theo cấp số nhân.

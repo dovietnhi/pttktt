@@ -1,0 +1,14 @@
+Mô tả chi tiết thuật toán:
+Xây dựng bảng lưu trữ kết quả cho từng cặp con dãy. Bảng này có kích thước (m+1) x (n+1), với m là độ dài của dãy a và n là độ dài của dãy b.
+Khởi tạo bảng và điền giá trị vào theo quy tắc sau:
+Nếu a[i] == b[j], thì giá trị tại ô (i+1, j+1) sẽ bằng giá trị ở ô (i, j) + 1.
+Nếu a[i] != b[j], thì giá trị tại ô (i+1, j+1) sẽ là max giữa giá trị ở ô (i, j+1) và ô (i+1, j).
+Kết quả sẽ nằm ở ô cuối cùng của bảng, tức là tại ô (m+1, n+1).
+
+Phương pháp thiết kế thuật toán:
+Sử dụng một bảng để lưu trữ các kết quả con của bài toán con nhỏ hơn.
+Sử dụng kỹ thuật quy hoạch động để tránh việc tính lại các giá trị đã tính trước đó.
+
+Trong trường hợp này, độ phức tạp thời gian của thuật toán tìm dãy con chung của hai dãy số sử dụng phương pháp quy hoạch động là O(m * n), 
+với m là độ dài của dãy a và n là độ dài của dãy b.
+Trong bài toán cụ thể này, với dãy a có độ dài m = 7 và dãy b có độ dài n = 6, thì độ phức tạp thời gian sẽ là O(7 * 6) = O(42).

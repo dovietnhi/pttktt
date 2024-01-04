@@ -1,0 +1,19 @@
+Mô tả chi tiết thuật toán:
+Sắp xếp các mặt hàng theo tỷ lệ giá trị/trọng lượng (giá trị chia trọng lượng).
+Bắt đầu từ mặt hàng có tỷ lệ lớn nhất, thêm vào túi nếu nó vẫn chưa đầy.
+Lặp lại quá trình trên cho đến khi túi đầy.
+
+Phương pháp thiết kế thuật toán:
+Sắp xếp mảng mặt hàng theo giá trị chia trọng lượng giảm dần.
+Duyệt qua từng mặt hàng, nếu mặt hàng có thể fit vào túi mà không vượt quá trọng lượng còn lại, thêm nó vào túi và cập nhật trọng lượng còn lại.
+Lặp lại cho đến khi túi đầy hoặc hết mặt hàng.
+
+Đánh giá thời gian thực hiện của thuật toán:
+Trong trường hợp giải thuật tham lam này, ta có thể sử dụng O(n log n) để mô tả độ phức tạp thời gian của bước sắp xếp mảng và O(n)
+cho quá trình duyệt qua danh sách mặt hàng và chọn mặt hàng thích hợp để thêm vào túi.
+Do đó, tổng độ phức tạp thời gian của thuật toán có thể xấp xỉ 
+"O(n log n + n) = O(n log n)."
+Với bộ dữ liệu cụ thể của bạn (A, B, C), n = 3 (số lượng mặt hàng). Do đó, độ phức tạp thời gian là O(3 log 3) + O(3),
+và nếu giải thích nó bằng số, đó sẽ là:
+Độ phức tạp thời gian ≈ 3 * log2(3) + 3 ≈ 3 * 1.585 + 3 ≈ 8.755.
+Vì vậy, với bộ dữ liệu cụ thể này, độ phức tạp thời gian của thuật toán là khoảng 8.755.

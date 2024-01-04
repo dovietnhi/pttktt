@@ -1,0 +1,46 @@
+ Mô tả chi tiết thuật toán QuickSort:
+Bước 1: Chọn phần tử chốt (pivot):
+Chọn một phần tử từ dãy làm phần tử chốt. Thông thường, chọn phần tử giữa để tối ưu hiệu suất, nhưng cũng có thể chọn phần tử đầu hoặc cuối.
+Bước 2: Phân hoạch (Partition):
+Phân hoạch dãy thành hai phần: một phần có các phần tử nhỏ hơn hoặc bằng pivot, và một phần có các phần tử lớn hơn pivot.
+Sử dụng hai con trỏ (left và right) để quét dãy và đưa các phần tử vào đúng vị trí.
+Bước 3: Đệ quy:
+Sắp xếp đệ quy các phần dãy nhỏ hơn và lớn hơn pivot.
+
+2. Phương pháp thiết kế thuật toán:
+Chọn Pivot: Việc chọn pivot ảnh hưởng đến hiệu suất của thuật toán. Có thể sử dụng các chiến lược như chọn ngẫu nhiên, 
+chọn phần tử giữa, hoặc sử dụng thuật toán median-of-three để cải thiện trường hợp xấu nhất.
+Phân hoạch: Sử dụng hai con trỏ để phân hoạch dãy thành hai phần, đồng thời đảm bảo các phần tử bên trái pivot nhỏ hơn hoặc bằng pivot, 
+và bên phải pivot lớn hơn pivot.
+
+Thời gian giải thuật
+Khi số lượng phần tử n là 8, 
+chúng ta có thể tính toán số lần phân chia và số lần so sánh để đánh giá thời gian thực hiện của thuật toán QuickSort.
+
+Phân tích với 
+n=8:
+Số lần phân chia (logn):
+log2cua8=3
+Có thể phải chia dãy tối đa 3 lần để đạt được các phần dãy có kích thước 1.
+Số lần so sánh (trong trường hợp tốt nhất):
+
+Mỗi lần phân chia, ta cần so sánh với phần tử pivot và di chuyển các phần tử để đặt pivot vào đúng vị trí.
+Trong trường hợp tốt nhất, mỗi lần phân chia cần 8 so sánh (mỗi phần tử so với pivot).
+Tổng số lần so sánh:
+Tổng số lần so sánh trong trường hợp tốt nhất là 
+3×8=24.
+Số lần so sánh (trong trường hợp xấu nhất):
+Trong trường hợp xấu nhất (khi mỗi lần phân chia tạo ra các phần dãy có kích thước không cân đối), số lần so sánh có thể là 
+8+7+6+…+1= 8×9/2=36.
+Tổng số lần so sánh (trong trường hợp xấu nhất):
+Tổng số lần so sánh trong trường hợp xấu nhất là 
+3×36=108.
+Kết luận:
+Trong trường hợp tốt nhất, QuickSort với 
+n=8 có thể thực hiện 
+24 lần so sánh.
+Trong trường hợp xấu nhất, QuickSort với 
+n=8 có thể thực hiện 
+108 lần so sánh.
+Trong trường hợp trung bình, độ phức tạp thời gian sẽ là 
+O(nlogn).

@@ -1,0 +1,55 @@
+﻿Thuật toán quay lui:
+Bắt đầu từ ô đầu tiên có tọa độ (x0, y0).
+Di chuyển quân mã đến một ô trống kế tiếp sao cho không đi qua ô đã đi qua trước đó và nằm trong phạm vi của bàn cờ.
+Lặp lại bước trên cho đến khi quân mã đã đi qua tất cả các ô trên bàn cờ.
+
+Phương pháp thiết kế thuật toán:
+Sử dụng một mảng 2 chiều để đánh dấu các ô đã được quân mã đi qua.
+Sử dụng hàm đệ quy để thực hiện việc di chuyển quân mã.
+Kiểm tra điều kiện dừng khi tất cả các ô trên bàn cờ đã được quân mã đi qua.
+Thực hiện các bước di chuyển và đánh dấu ô đã đi qua trong hàm đệ quy.
+Thực hiện bài toán với 1 bộ dữ liệu cụ thể:
+Dưới đây là một ví dụ minh họa với bàn cờ kích thước 5x5, quân mã bắt đầu từ ô (0, 0):
+Bắt đầu từ ô (0, 0)
+Di chuyển đến ô (1, 2).
+Di chuyển đến ô (2, 4).
+Di chuyển đến ô (4, 3).
+Di chuyển đến ô (3, 1).
+Di chuyển đến ô (1, 0).
+Di chuyển đến ô (2, 2).
+Di chuyển đến ô (0, 3).
+Di chuyển đến ô (1, 1).
+Di chuyển đến ô (3, 0).
+Di chuyển đến ô (4, 2).
+Di chuyển đến ô (3, 4).
+Di chuyển đến ô (1, 3).
+Di chuyển đến ô (0, 1).
+Di chuyển đến ô (2, 0).
+Di chuyển đến ô (4, 1).
+Di chuyển đến ô (3, 3).
+Di chuyển đến ô (1, 4).
+Di chuyển đến ô (0, 2).
+Di chuyển đến ô (2, 1).
+Di chuyển đến ô (4, 0).
+Di chuyển đến ô (3, 2).
+Di chuyển đến ô (4, 4).
+Di chuyển đến ô (2, 3).
+Di chuyển đến ô (0, 4).
+
+Thời gian giải thuật
+Độ phức tạp thời gian:
+
+Độ phức tạp thời gian của thuật toán quay lui trong trường hợp xấu nhất là O(8^(n^2)) với n là kích thước bàn cờ.
+Mỗi bước di chuyển có tối đa 8 lựa chọn và bài toán cần thực hiện n^2 - 1 bước để đi qua tất cả các ô trên bàn cờ.
+Độ phức tạp không gian:
+
+Độ phức tạp không gian của thuật toán là O(n^2) do sử dụng một mảng 2 chiều để đánh dấu các ô đã được quân mã đi qua.
+Chứng minh độ phức tạp thời gian:
+
+Trong trường hợp xấu nhất, quân mã có thể di chuyển tới một ô bất kỳ trong 8 ô xung quanh của nó. Do đó, số lựa chọn cho mỗi bước di chuyển là 8.
+Tổng số cách di chuyển để đi qua tất cả các ô trên bàn cờ là 8^(n^2 - 1) vì cần thực hiện n^2 - 1 bước để đi qua tất cả các ô 
+(điểm xuất phát không tính).
+Tối ưu hóa:
+Thuật toán quay lui trên bài toán quân mã có độ phức tạp lớn và không phải là phương pháp hiệu quả cho các giá trị lớn của n.
+Có thể tối ưu hóa thuật toán bằng cách sử dụng các phương pháp thông minh như Heuristic (chọn bước tiếp theo dựa trên số lựa chọn ít nhất) 
+hoặc sử dụng kiến thức tiên đoán về cấu trúc bài toán.

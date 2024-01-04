@@ -1,0 +1,21 @@
+Mô tả chi tiết thuật toán:
+a. Input:
+- Số tự nhiên n (< 100).
+b. Output:
+- Số cách phân tích số n thành tổng của dãy các số nguyên dương.
+c. Thuật toán:
+- Sử dụng kỹ thuật đệ quy để liệt kê tất cả các cách phân tích số n thành tổng của các số nguyên dương.
+- Dùng một mảng để lưu các số nguyên dương tham gia phân tích.
+- Tại mỗi bước đệ quy, thử tất cả các số từ 1 đến n và thêm số đó vào mảng, sau đó gọi đệ quy với số n giảm đi giá trị vừa thêm.
+- Nếu n giảm về 0, thì một cách phân tích mới được tìm thấy.
+- Đảm bảo loại bỏ trùng lặp bằng cách sắp xếp mảng và không thêm các số đã sử dụng trước đó.
+
+Phương pháp thiết kế thuật toán:
+Sử dụng kỹ thuật đệ quy để duyệt qua tất cả các trường hợp có thể.
+Sử dụng một mảng để lưu các số nguyên dương đã chọn để tránh trùng lặp.
+
+Thuật toán này có độ phức tạp thời gian là O(2^n), với n là đầu vào. Bởi vì mỗi lần đệ quy,
+chúng ta có n lựa chọn cho việc giảm giá trị n,và mỗi lựa chọn này có thể tạo ra một nhánh mới trong cây đệ quy.
+Điều này dẫn đến 2^n trường hợp phải xem xét trong trường hợp tồn tại một số cách phân tích.
+Với n=5 thì số lần đệ quy là 2^5=32 Do đó,
+thuật toán sẽ thực hiện 32 lần đệ quy để tìm tất cả các cách phân tích số 5 thành tổng của dãy các số nguyên dương.

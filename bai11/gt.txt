@@ -1,0 +1,41 @@
+Mô tả chi tiết thuật toán:
+Thuật toán giải bài toán cái túi theo phương pháp tham lam sẽ thực hiện theo bước sau:
+Sắp xếp các đồ vật theo giá trị trên khối lượng (giá trị trên trọng lượng) giảm dần.
+Bắt đầu từ đồ vật có giá trị lớn nhất, thêm đồ vật vào túi nếu việc thêm không làm vượt quá khối lượng cho phép.
+Tiếp tục quá trình cho đến khi túi đầy hoặc hết đồ vật.
+Thuật toán này dựa trên việc luôn chọn đồ vật có giá trị lớn nhất và thêm vào túi nếu nó vẫn vừa khối lượng cho phép.
+
+Chỉ rõ phương pháp thiết kế thuật toán:
+Phương pháp thiết kế thuật toán là tham lam, nơi ta luôn chọn giá trị tốt nhất tại mỗi bước mà không xem xét những tác động trong tương lai.
+ Cụ thể, thuật toán sẽ thực hiện các bước sau:
+
+Sắp xếp mảng chứa thông tin về các đồ vật theo giá trị trên khối lượng giảm dần.
+Duyệt qua từng đồ vật theo thứ tự đã sắp xếp, nếu việc thêm đồ vật không làm vượt quá khối lượng cho phép, 
+thì thêm đồ vật vào túi và cập nhật khối lượng còn lại.
+
+Thời gian thực hiện giải thuật
+w là khối lượng tối đa mà túi có thể chứa.
+n là số lượng đồ vật.
+C là số lần so sánh giá trị/giá trị trên khối lượng khi sắp xếp.
+S là số lần thực hiện phép toán cộng/trừ (thêm đồ vật vào túi).
+Sắp xếp đồ vật:
+
+Sắp xếp đồ vật theo giá trị trên khối lượng: 
+O(nlogn) (với n là số lượng đồ vật).
+Số lần so sánh 
+C=nlogn.
+Thêm đồ vật vào túi:
+Duyệt qua từng đồ vật đã sắp xếp: 
+O(n).
+Với mỗi đồ vật, có một số lần thực hiện phép toán cộng/trừ.
+Trong trường hợp tối đa, khi túi không bao giờ đầy, 
+S=n.
+Trong trường hợp tồi nhất, khi túi chỉ chứa một đồ vật, 
+S=n.
+Trong trường hợp trung bình, 
+S có thể xấp xỉ
+n.
+Tổng số lần thực hiện phép toán 
+S=O(n).
+tổng thời gian thực hiện của thuật toán là 
+O(nlogn)+O(n)=O(nlogn). 

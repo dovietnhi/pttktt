@@ -1,0 +1,66 @@
+ Mô tả chi tiết thuật toán:
+a. Phương pháp Chia để trị:
+Ý tưởng: Chia n! thành các phần nhỏ hơn, tính từng phần và kết hợp kết quả.
+Thuật toán:
+Nếu n = 0 hoặc n = 1, trả về 1.
+Ngược lại, tính n! bằng cách tính (n/2)! bình phương và nhân với chính nếu n là số chẵn hoặc nhân với chính n rồi nhân với (n-1)/2! nếu n là số lẻ.
+b. Phương pháp Quy hoạch động:
+Ý tưởng: Sử dụng bảng lưu trữ để giữ các giá trị đã tính trước đó để tránh tính lại.
+Thuật toán:
+Tạo một mảng dp với dp[i] là giá trị của i!.
+Khởi tạo dp[0] và dp[1] là 1.
+Duyệt từ 2 đến n, tính dp[i] bằng cách nhân dp[i-1] với i.
+
+ Chỉ rõ phương pháp thiết kế thuật toán trong thuật toán vừa nêu:
+a. Chia để trị
+int factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    else {
+        int temp = factorial(n / 2);
+        if (n % 2 == 0)
+            return temp * temp;
+        else
+            return n * temp * temp;
+    }
+}
+
+b. Quy hoạch động:
+int factorial(int n) {
+    int dp[n + 1];
+    dp[0] = dp[1] = 1;
+
+    for (int i = 2; i <= n; ++i)
+        dp[i] = i * dp[i - 1];
+
+    return dp[n];
+}
+Thời gian thực hiện giả thuật
+
+1. Phương pháp Chia để trị:
+
+T(n)=T(n/2)+O(1)
+Đối với n=5:
+T(5)=T(5/2)+O(1)
+T(5)=T(2)+O(1)
+Tiếp theo:
+T(2)=T(2/2)+O(1)
+T(2)=T(1)+O(1)
+Các bước tiếp theo:
+T(1)=O(1)
+Tổng hợp lại:
+T(2)=O(1)+O(1)=O(1)
+T(5)=T(2)+O(1)=O(1)+O(1)=O(1)
+Do đó, độ phức tạp thời gian của thuật toán Chia để trị là 
+O(1) với n=5.
+
+2. Phương pháp Quy hoạch động:
+Đối với Quy hoạch động, chúng ta có thể tính trực tiếp với n=5:
+T(5)=O(2)+O(3)+O(4)+O(5)=O(14)
+Do đó, độ phức tạp thời gian của thuật toán Quy hoạch động là 
+O(14) với n=5.
+
+Tóm lại, đối với bài toán tính 
+n! với n=5, phương pháp Chia để trị có thời gian thực hiện tốt hơn với độ phức tạp 
+O(1) so với 
+O(14) của phương pháp Quy hoạch động.

@@ -1,0 +1,21 @@
+Mô tả thuật toán:
+Sắp xếp các hoạt động theo thời điểm kết thúc tăng dần.
+Chọn hoạt động đầu tiên từ danh sách đã sắp xếp.
+Duyệt qua danh sách các hoạt động còn lại, chọn lựa những hoạt động không giao cắt với hoạt động đã được chọn và có thời điểm kết thúc sớm nhất.
+Lặp lại bước trước cho đến khi không còn hoạt động nào thỏa mãn.
+
+Phương pháp thiết kế thuật toán:
+Sắp xếp danh sách hoạt động theo thời điểm kết thúc.
+Duyệt qua danh sách để chọn lựa hoạt động tiếp theo.
+
+Đánh giá thời gian thực hiện của thuật toán:
+Thuật toán tham lam có độ phức tạp thời gian là O(nlogn) do bước sắp xếp danh sách hoạt động theo thời điểm kết thúc.
+Sau đó, quá trình lựa chọn hoạt động sẽ có độ phức tạp là O(n).
+Do đó, tổng độ phức tạp của thuật toán là "O(nlogn) + O(n) = O(nlogn).".
+Trong trường hợp bài toán đã được cung cấp, có 9 hoạt động. Do đó, n = 9.
+Độ phức tạp thời gian sắp xếp sẽ là O(9log9) ≈ O(27).
+Độ phức tạp thời gian lựa chọn hoạt động là O(9).
+Tổng độ phức tạp là O(27) + O(9) ≈ O(36).
+Kết luận:
+Độ phức tạp thời gian của thuật toán tham lam với bộ dữ liệu đã cho là khoảng O(36).
+Thuật toán này thường có hiệu suất tốt đối với các bài toán xếp lịch và làm giảm độ phức tạp so với các phương pháp khác trong nhiều trường hợp.

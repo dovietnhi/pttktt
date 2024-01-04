@@ -1,0 +1,18 @@
+Mô tả chi tiết thuật toán:
+Bước 1: Nhập số tiền cần đổi từ người dùng (n).
+Bước 2: Khởi tạo một biến count để đếm số đồng xu cần đổi.
+Bước 3: Sử dụng thuật toán tham lam để lựa chọn đồng xu phù hợp.
+Bước 4: Bắt đầu từ đồng xu có giá trị lớn nhất (5000) và kiểm tra xem số đồng xu đó có thể được sử dụng bao nhiêu để đổi cho số tiền còn lại.
+Bước 5: Lặp lại bước 4 cho các đồng xu khác (2000, 1000, 500) cho đến khi số tiền còn lại là 0.
+Bước 6: In ra số đồng xu cần đổi.
+
+Phương pháp thiết kế thuật toán:
+Sử dụng phương pháp tham lam: Luôn chọn đồng xu có giá trị lớn nhất mà vẫn không vượt quá số tiền còn lại.
+Áp dụng sắp xếp giảm dần cho các đồng xu để thuật toán hoạt động hiệu quả.
+
+Đánh giá thời gian thực hiện của thuật toán:
+Thuật toán có độ phức tạp thấp vì chỉ cần lặp qua các đồng xu một lần và thực hiện phép toán đơn giản. Độ phức tạp là O(k), trong đó k là số loại đồng xu.
+Giả sử n là số tiền cần đổi và k là số loại đồng xu khả dụng. Thuật toán thực hiện lặp qua tất cả các loại đồng xu một lần, do đó độ phức tạp thời gian là O(k).
+Trong trường hợp này, k = 4 (vì có 4 loại đồng xu: 5000, 2000, 1000, 500).
+Do đó, đánh giá thời gian thực hiện của thuật toán đổi tiền xu theo kiểu toán học là O(4), 
+tương đương với O(1) - thời gian thực hiện của thuật toán không phụ thuộc vào kích thước của dữ liệu đầu vào (n).

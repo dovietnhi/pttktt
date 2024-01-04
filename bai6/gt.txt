@@ -1,0 +1,22 @@
+Mô tả chi tiết thuật toán:
+Khởi tạo một bảng cờ 8x8 và đặt 8 con hậu vào bảng sao cho không có hai con nào tấn công nhau.
+Bắt đầu từ hàng đầu tiên, cố gắng đặt một con hậu vào mỗi cột sao cho không tấn công với những con hậu đã đặt trước đó.
+Nếu một con hậu được đặt vào một ô nhất định mà không tấn công với bất kỳ con hậu nào khác, tiếp tục đệ quy để đặt hậu tiếp theo trên hàng tiếp theo.
+Nếu không thể đặt hậu vào một ô nhất định mà không tấn công với con hậu nào khác, quay lui và thử một cách đặt hậu khác ở hàng trước đó.
+Lặp lại quá trình này cho đến khi tất cả các hậu được đặt vào bảng.
+
+Phương pháp thiết kế thuật toán:
+Thiết kế thuật toán theo hướng quay lui.
+Sử dụng một mảng để lưu trữ vị trí của các con hậu trên bảng cờ.
+Xây dựng hàm kiểm tra xem một con hậu có thể được đặt vào một ô cụ thể hay không.
+Sử dụng đệ quy để thử tất cả các khả năng đặt hậu trên các hàng.
+
+Đánh giá thời gian thực hiện của thuật toán
+Thuật toán xếp tám hậu sử dụng phương pháp quay lui có độ phức tạp là O(n!),
+trong đó n là kích thước của bàn cờ (8 trong trường hợp này).
+Độ phức tạp này xuất hiện do mỗi con hậu có thể được đặt vào bất kỳ ô nào trên bảng cờ và cần kiểm tra tính an toàn của từng vị trí đó.
+Đối với bộ dữ liệu cụ thể là việc đặt 5, 6, 7 con hậu đầu tiên trên bảng cờ 8x8,
+thời gian thực hiện của thuật toán sẽ phụ thuộc vào cách bố trí ban đầu các hậu và cách chúng được đặt trong quá trình thực hiện thuật toán.
+Một số điểm cần lưu ý:
+Độ phức tạp:
+Độ phức tạp trong trường hợp xấu nhất là O(8!), do có 8 con hậu cần được đặt trên bảng cờ 8x8. có 92 nghiệm.

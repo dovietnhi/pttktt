@@ -1,0 +1,24 @@
+Mô tả chi tiết thuật toán MergeSort:
+Bước 1: Chia dãy số:
+Chia dãy số nguyên A thành hai phần bằng cách chọn một vị trí giữa dãy.
+Bước 2: Sắp xếp đệ quy:
+Gọi đệ quy để sắp xếp hai nửa dãy đã chia.
+Bước 3: Trộn (Merge):
+Trộn hai nửa đã sắp xếp để tạo ra dãy hoàn chỉnh.
+
+Phương pháp thiết kế thuật toán trong MergeSort:
+Sử dụng phương pháp chia để trị: Chia dãy số thành các phần nhỏ hơn, giải quyết từng phần rồi trộn lại.
+Đặc điểm quan trọng: Trong bước trộn, các phần tử từ hai nửa đã sắp xếp được so sánh và đưa vào dãy mới sao cho dãy mới cũng là dãy không giảm.
+
+Để đánh giá thời gian thực hiện của thuật toán MergeSort chi tiết theo toán học với n bằng 8, 
+chúng ta có thể sử dụng phương trình đệ quy của thuật toán và tính toán số phép so sánh và trộn (merge) tương ứng. Dưới đây là phân tích chi tiết:
+Phân tích đệ quy:
+
+Số phép so sánh (comparisons): Tính đến bước trộn, mỗi phần tử sẽ được so sánh ít nhất một lần. Vì vậy, tổng số phép so sánh là O(n log n).
+Số lần trộn (merges): Mỗi lần trộn sẽ tạo ra một dãy đã sắp xếp. Tổng số lần trộn là O(n log n).
+Tổng kết:
+
+Tổng số phép so sánh và trộn trong trường hợp n = 8 là O(8 log 8) = O(24).
+Với n bằng 8, thuật toán MergeSort sẽ thực hiện tối đa 24 phép so sánh và trộn. 
+Có thể thấy rằng thời gian thực hiện của thuật toán MergeSort tăng theo hàm logarit theo cơ số 2 của n. 
+Điều này làm cho MergeSort trở thành một thuật toán hiệu quả đối với việc sắp xếp mảng có kích thước lớn.

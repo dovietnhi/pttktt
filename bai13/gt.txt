@@ -1,0 +1,43 @@
+﻿Mô tả chi tiết thuật toán:
+Thuật toán quay lui được sử dụng để giải bài toán này. Thuật toán này sẽ thử từng khả năng có thể của các dãy con để kiểm tra xem có tồn tại một dãy con có tổng bằng M hay không.
+
+Phương pháp thiết kế thuật toán:
+Khởi tạo một hàm đệ quy để thử tất cả các khả năng của dãy con.
+Duyệt qua từng phần tử của dãy số.
+Đối với mỗi phần tử, ta có 2 lựa chọn: bao gồm hoặc không bao gồm vào dãy con.
+Nếu tổng của dãy con bằng M, thì đó là một lời giải và được in ra.
+Nếu tổng của dãy con nhỏ hơn M, tiếp tục đệ quy để thử thêm phần tử tiếp theo.
+Nếu tổng của dãy con vượt quá M hoặc đã duyệt qua tất cả các phần tử, thoát khỏi đệ quy.
+
+Cho dãy số {2, 3, 5, 1, 2, 4, 6, 8} và giá trị M là 11, chúng ta muốn tìm tất cả các dãy con có tổng bằng 11.
+
+Bước 1: Bắt đầu với dãy rỗng, ta thêm từng phần tử vào và thử tất cả các khả năng.
+
+Thêm 2: 2
+Thêm 3: 2 3
+Thêm 5: 2 3 5
+Thêm 1: 2 3 5 1
+Thêm 2: 2 3 5 1 2
+Thêm 4: 2 3 5 1 2 4
+Thêm 6: 2 3 5 1 2 4 6
+Thêm 8: 2 3 5 1 2 4 6 8
+Bước 2: Quay lại từng bước và loại bỏ một số phần tử để kiểm tra tất cả các khả năng.
+
+Loại bỏ 8: 2 3 5 1 2 4 6
+Loại bỏ 6: 2 3 5 1 2 4
+Loại bỏ 4: 2 3 5 1 2
+Loại bỏ 2: 2 3 5 1
+Loại bỏ 1: 2 3 5
+Loại bỏ 5: 2 3
+Loại bỏ 3: 2
+Loại bỏ 2: Dãy rỗng
+Kết quả: Các dãy con có tổng bằng 11 là:
+
+2 3 5 1
+2 4 5
+2 3 6
+
+Đánh giá thời gian thực hiện của thuật toán:
+Thời gian thực hiện của thuật toán quay lui có thể phụ thuộc vào kích thước của dãy số đầu vào và cấu trúc của nó. 
+Trong trường hợp tồi nhất, thuật toán có thể phải thử tất cả các khả năng, nên có độ phức tạp là O(2^n).
+Tuy nhiên, có thể có cải tiến như sử dụng kỹ thuật nhánh cận để giảm số lượng trường hợp cần kiểm tra.

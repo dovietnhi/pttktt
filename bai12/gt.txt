@@ -1,0 +1,53 @@
+Mô tả chi tiết thuật toán:
+Xây dựng bảng 2 chiều dp, với dp[i][j] là giá trị lớn nhất có thể đạt được khi chỉ xem xét i đồ 
+vật đầu tiên và có khả năng chứa j khối lượng trong túi.
+Dùng quy hoạch động để tính giá trị của dp[i][j] dựa trên trạng thái trước đó, tức là dp[i-1][j] 
+(giữ lại giá trị tốt nhất từ i-1 đồ vật) và dp[i-1][j-ai] (nếu có thể chứa đồ vật thứ i).
+Cập nhật giá trị dp[i][j] bằng cách chọn giá trị tốt nhất giữa dp[i-1][j] và dp[i-1][j-ai] + ci.
+Thuật toán sẽ kết thúc với giá trị tại dp[n][w] là giá trị lớn nhất có thể đạt được với n đồ vật và túi có thể chứa w khối lượng.
+
+Phương pháp thiết kế thuật toán:
+Dùng quy hoạch động để tận dụng các giá trị đã tính toán trước đó và tránh tính toán lặp lại.
+Tìm ra quy luật cập nhật giá trị dp[i][j] sao cho đạt được giá trị lớn nhất.
+
+Thực hiện bài toán với 1 bộ dữ liệu cụ thể bằng thuật toán đã xây dựng 
+n=3 w=5 w=2,3,4 v=1,2,5
+Duyệt qua từng đồ vật và từng khối lượng túi để điền giá trị vào bảng dp.
+
+Bước 1: Duyệt từng đồ vật và khối lượng túi:
+
+i = 1 (đồ vật thứ 1, khối lượng 3):
+
+Không thể chọn đồ vật này vì khối lượng túi là 2.
+dp[1][3] = max(0, 4 + dp[0][0]) = 4
+i = 2 (đồ vật thứ 2, khối lượng 2):
+
+Có thể chọn đồ vật này: dp[2][2] = max(0, 3 + dp[1][0]) = 3, dp[2][3] = max(3, dp[1][3]) = 4.
+dp[2][k] với k còn lại không thay đổi.
+i = 3 (đồ vật thứ 3, khối lượng 4):
+
+Có thể chọn đồ vật này: dp[3][4] = max(0, 5 + dp[2][0]) = 5, dp[3][5] = max(5, dp[2][1]) = 5.
+dp[3][k] với k còn lại không thay đổi.
+i = 4 (đồ vật thứ 4, khối lượng 1):
+
+Có thể chọn đồ vật này: dp[4][1] = max(0, 1 + dp[3][0]) = 1.
+dp[4][k] với k còn lại không thay đổi.
+i = 5 (đồ vật thứ 5, khối lượng 5):
+
+Có thể chọn đồ vật này: dp[5][5] = max(0, 6 + dp[4][0]) = 6, dp[5][6] = max(6, dp[4][1]) = 6.
+dp[5][k] với k còn lại không thay đổi.
+
+Thời gian thực hiện giải thuật
+Đánh giá thời gian thực hiện của thuật toán quy hoạch động cho bài toán cái túi có thể được 
+thực hiện bằng cách phân tích thời gian chạy của mỗi bước trong thuật toán. Trong trường hợp này, 
+chúng ta sẽ sử dụng đánh giá thời gian Big-O để mô tả hiệu suất của thuật toán.
+Khối lượng của túi là w, số lượng đồ vật là n.
+Khởi tạo bảng dp:
+Số lần cần đi qua tất cả các ô của bảng dp là O(nw).
+Vòng lặp chính:
+Mỗi ô trong bảng dp đòi hỏi một số lượng công việc cố định (so sánh, cộng trừ), vì vậy vòng lặp chính có độ phức tạp O(nw).
+Tổng cộng:
+Độ phức tạp toàn bộ thuật toán là O(nw^2).
+Như vậy, đánh giá thời gian thực hiện của thuật toán theo độ phức tạp là O(nw^2). 
+Điều này có nghĩa là thời gian thực hiện của thuật toán tăng theo bậc 2 của khối lượng túi và số lượng đồ vật. 
+Đối với các bài toán với dữ liệu lớn, đánh giá này giúp ta hiểu rằng thuật toán có thể trở nên chậm chạp khi w và n tăng lên.
